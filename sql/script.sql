@@ -1,4 +1,5 @@
-create database if not exists scorpion_ecomerse_db;
+
+create database scorpion_ecomerse_db;
 use scorpion_ecomerse_db;
 
 create schema manager_toolset;
@@ -39,6 +40,8 @@ create or replace table init_data."order" (
 copy into init_data."order"
 from @manager_toolset.stage_order/ecommerce_orders.csv
 file_format = manager_toolset.comma_delimited_csv_file_format;
+
+select * from init_data."order";
 
 ---------------------------------------------------------------------------------------------------------------
 
